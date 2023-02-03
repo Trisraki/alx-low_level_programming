@@ -15,18 +15,11 @@ int main(void)
 	listint_t hello = {8, NULL};
 	size_t n;
 
-	head = &hello;
-	new = malloc(sizeof(listint_t));
-	if (new == NULL)
-	{
-		printf("Error\n");
-		return (1);
-	}
-	new->n = 9;
-	new->next = head;
-	head = new;
-	n = print_listint(head);
-	printf("-> %lu elements\n", n);
-	free(new);
+	head = NULL;
+	node = _add_node(&head, 9);
+	node->next = _add_node(&head, 6);
+	print_listint_safe(head);
+	n = free_listint_safe(&head);
+	printf("%lu\n%p\n", n, (void *)head);
 	return (0);
 }
