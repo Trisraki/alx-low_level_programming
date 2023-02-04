@@ -19,7 +19,7 @@ int main(void)
 	node = _add_node(&head, 9);
 	node->next = _add_node(&head, 6);
 	print_listint_safe(head);
-	n = free_listint_safe(&head);
+	n = print_listint_safe(&head);
 	printf("%lu\n%p\n", n, (void *)head);
 	return (0);
 }
