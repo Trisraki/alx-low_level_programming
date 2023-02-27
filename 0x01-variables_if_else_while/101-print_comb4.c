@@ -1,45 +1,35 @@
 #include <stdio.h>
 
 /**
- * main - Prints numbers between 012 to 789.
+ * main - Prints 3 combination of numbers
  *
- * Return: Always 0 (Success)
+ * Return: Always (Success)
  */
 int main(void)
 {
-	int i, e, g;
+	int c, i, k;
 
-	i = 48;
-	e = 48;
-	g = 48;
-
-	while (e < 58)
+	for (c = '0'; c <= '9'; c++)
 	{
-		i = 48;
-		while (i < 58)
+		for (i = '0'; i <= '9'; i++)
 		{
-			g = 48;
-			while (g < 58)
+			for (k = '0'; k <= '9'; k++)
 			{
-				if (e != i && e != g && i != g && e < i && i < g)
+				if (c < i && i < k)
 				{
-					putchar(e);
+					putchar(c);
 					putchar(i);
-					putchar(g);
-					if (i == 56 && e == 55 && g == 57)
+					putchar(k);
+
+					if (c != '7')
 					{
-						break;
+						putchar(',');
+						putchar(' ');
 					}
-					putchar(',');
-					putchar(' ');
 				}
-				g++;
 			}
-			i++;
 		}
-		e++;
 	}
 	putchar('\n');
-
 	return (0);
 }

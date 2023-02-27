@@ -1,22 +1,19 @@
+#include <unistd.h>
 #include <stdio.h>
 
 /**
- * main - print if the number is postive, zero, or negative
- *
- * Description: using the main function
- * this program prints "Programming is positive, zero, or negative
- * Return: 0
+ * main - Entry point
+ * Description: prints lowercase alphabets in reverse
+ * Return: Always 0 (success)
  */
 int main(void)
 {
-	char c;
+	int a;
 
-	for (c = 'z'; c >= 'a'; c--)
+	for (a = 'z'; a >= 'a'; a--)
 	{
-		putchar(c);
+		putchar(a);
 	}
-
 	putchar('\n');
-
 	return (0);
 }

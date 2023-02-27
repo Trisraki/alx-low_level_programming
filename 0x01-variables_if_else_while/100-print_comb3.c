@@ -1,38 +1,32 @@
 #include <stdio.h>
+#include <unistd.h>
 
 /**
- * main - Prints numbers between 00 to 89.
- *
- * Return: Always 0 (Success)
+ * main - Entyr point
+ * Description: prints two digits combination
+ * Return: Always 0 (success)
  */
 int main(void)
 {
-	int i, e;
+	int c, i;
 
-	i = 48;
-	e = 48;
-
-	while (e < 58)
+	for (c = '0'; c <= '9'; c++)
 	{
-		i = 48;
-		while (i < 58)
+		for (i = '0'; i <= '9'; i++)
 		{
-			if (e != i && e < i)
+			if (c < i)
 			{
-				putchar(e);
+				putchar(c);
 				putchar(i);
-				if (i == 57 && e == 56)
+
+				if (c != '8' || (c == '8' && i != '9'))
 				{
-					break;
+					putchar(',');
+					putchar(' ');
 				}
-				putchar(',');
-				putchar(' ');
 			}
-			i++;
 		}
-		e++;
 	}
 	putchar('\n');
-
 	return (0);
 }
