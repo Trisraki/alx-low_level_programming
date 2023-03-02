@@ -17,6 +17,6 @@ int main(void)
 	c[2] = 1024;
 	r = &n;
 	*(r + 5) = 98;
-	printf("c[2] = %d\n", c[2]);
+	printf("c[2] = %d\n" c[2]);
 	return (0);
 }
