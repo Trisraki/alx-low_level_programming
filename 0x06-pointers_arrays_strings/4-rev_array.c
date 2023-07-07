@@ -2,18 +2,20 @@
 
 /**
  * reverse_array - reverse array
- * @a:array
- * @n:integer
- * Return:void
- **/
+ * @a: array
+ * @n: number of elements
+ *
+ * Return: void
+ */
+
 void reverse_array(int *a, int n)
 {
-	int i, c;
+	int i, j, temp;
 
-	for (i = 0; (i < (n - 1) / 2); i++)
+	for (j = 0, i = n - 1; j < i; i--, j++)
 	{
-		c = a[i];
-		a[i] = a[n - 1 - i];
-		a[n - 1 - i] = c;
+		temp = *(a + j);
+		*(a + j) = *(a + i);
+		*(a + i) = temp;
 	}
 }
